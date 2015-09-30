@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930181121) do
+ActiveRecord::Schema.define(version: 20150930183518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150930181121) do
   create_table "asset_items", force: :cascade do |t|
     t.integer  "asset_id"
     t.string   "asset_list_id"
-    t.string   "integer"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
