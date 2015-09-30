@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_list_id: 
+  account_id: 1
+
+two:
+  asset_list_id: 
+  account_id: 1
