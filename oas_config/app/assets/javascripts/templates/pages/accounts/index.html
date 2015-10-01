@@ -1,1 +1,6 @@
-<p>templates/pages/accounts/index.html</p>
+<table>
+  <tr ng-repeat="account in accounts">
+    <td ng-bind="account.id"></td>
+    <td ng-bind="account.org_code"></td>
+  </tr>
+</table>

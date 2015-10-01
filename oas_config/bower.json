@@ -6,6 +6,7 @@
     "angular-route": "1.4.6",
     "angular-sanitize": "1.4.6",
     "angular-cookies": "1.4.6",
+    "angular-resource": "1.4.6",
     "underscore": "1.7.0",
     "momentjs": "2.8.4",
     "materialize": "0.97.0"

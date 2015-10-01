@@ -16,6 +16,7 @@
 //= require angular-route/angular-route
 //= require angular-sanitize/angular-sanitize
 //= require angular-cookies/angular-cookies
+//= require angular-resource/angular-resource
 //= require momentjs/moment
 //= require underscore/underscore
 //= require materialize/bin/materialize
@@ -24,6 +25,9 @@
 
 //Directives
 //= require_tree ./directives
+
+//Services
+//= require_tree ./services
 
 //Controllers
 //= require_tree ./controllers

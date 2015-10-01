@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('oasConfig', ['ngRoute',])
+angular.module('oasConfig', ['ngRoute', 'ngResource'])
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {

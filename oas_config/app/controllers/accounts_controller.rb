@@ -1,6 +1,6 @@
 class AccountsController < ApiController
   def index
-    @result = Account.all params
+    @result = Account.all
     render json: @result.to_json
   end
 
