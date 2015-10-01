@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930183518) do
+ActiveRecord::Schema.define(version: 20151001163243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20150930183518) do
 
   create_table "asset_items", force: :cascade do |t|
     t.integer  "asset_id"
-    t.string   "asset_list_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "asset_list_id"
   end
 
   create_table "asset_lists", force: :cascade do |t|
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150930183518) do
     t.datetime "script_last_modified"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "type"
   end
 
   create_table "assets", force: :cascade do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150930183518) do
     t.datetime "script_last_modified"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "type"
   end
 
 end
