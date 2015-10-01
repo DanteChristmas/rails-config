@@ -10,9 +10,26 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
+//Libraries
+//= require jquery
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-sanitize/angular-sanitize
 //= require angular-cookies/angular-cookies
-//= require momentjs/momentjs
+//= require momentjs/moment
 //= require underscore/underscore
+//= require materialize/bin/materialize
+
+//= require app
+
+//Directives
+//= require_tree ./directives
+
+//Controllers
+//= require_tree ./controllers
+
+//templates
+//= require_tree ./templates/directives
+//= require_tree ./templates/pages/accounts
+//= require_tree ./templates/pages/assets
+//= require_tree ./templates/pages/dashboard

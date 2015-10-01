@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular-rails-templates (0.0.7)
+      railties (>= 3.1)
+      sprockets
     arel (6.0.3)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -144,6 +147,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates (= 0.0.7)
   better_errors
   byebug
   coffee-rails (~> 4.1.0)

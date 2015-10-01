@@ -10,6 +10,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.enable_robots = false
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -21,6 +23,9 @@ Rails.application.configure do
   config.active_support.deprecation = :log
   config.log_formatter = ::Logger::Formatter.new
 
-  #switch to serve full unminified/combined assets
-  config.serve_full_assets = true
+  # Raise an error on page load if there are pending migrations
+  # config.active_record.migration_error = :page_load
+
+
+
 end
