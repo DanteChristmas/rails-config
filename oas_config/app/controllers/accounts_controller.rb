@@ -5,19 +5,15 @@ class AccountsController < ApiController
   end
 
   def show
-    @account = Account.find_by_org_code params[:id]
-
-    if params[:dev_assets]
+    begin
+      @account = Account.find_by_org_code params[:id]
       @result = {
         account: @account,
-        assets: @account.asset_lists.map{|i| i.assets}
+        assets: @account.get_asset_list
       }
-    else
-      @result = {
-        account: @account,
-        assets: @account.asset_lists
-      }
+      render json: @result.to_json
+    rescue
+      not_found
     end
-    render json: @result.to_json
   end
 end

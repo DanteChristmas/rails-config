@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001163243) do
+ActiveRecord::Schema.define(version: 20151001183106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,19 @@ ActiveRecord::Schema.define(version: 20151001163243) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "org_code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "api_key"
+    t.string   "google_analytics_key"
+    t.string   "google_search_key"
+    t.string   "dfp_path_prefix"
+    t.string   "ooyala_video_player_id"
+    t.string   "ooyala_audio_player_id"
+    t.string   "ooyala_ad_set_codes"
+    t.string   "platform_name"
+    t.string   "copyright"
+    t.string   "publication_name"
+    t.string   "amp_endpoint_url"
   end
 
   create_table "asset_items", force: :cascade do |t|

@@ -1,0 +1,15 @@
+{
+  "name": "oas-config",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "1.4.6",
+    "angular-route": "1.4.6",
+    "angular-sanitize": "1.4.6",
+    "angular-cookies": "1.4.6",
+    "underscore": "1.7.0",
+    "momentjs": "2.8.4"
+  },
+  "resolutions": {
+    "angular": "1.4.6"
+  }
+}

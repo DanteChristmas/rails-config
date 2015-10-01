@@ -6,13 +6,16 @@ class ApplicationController < ActionController::Base
   after_filter :set_crsf_token_for_ng
 
   def configure_client_caching
-    configure_client_caching_override
     expires_in @cache_time || @default_cache_time, public: true, must_revalidate: @must_revalidate
   end
 
 
   def set_crsf_token_for_ng
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+  end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
   end
 
 protected
