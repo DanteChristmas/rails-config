@@ -1,0 +1,29 @@
+<table class="striped responsive-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Organization Code</th>
+      <th>Platform Name</th>
+      <th>Publication Name</th>
+      <th>ApiKey</th>
+      <th>AMP Endpoint</th>
+      <th>Actions</th>
+      <!-- <th>Google Analytics</th>
+      <th>Google Search</th>
+      <th>Ooyala Video Player</th>
+      <th>Ooyala Audio Player</th>
+      <th>Ooyala Adset Codes</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="account_row" ng-repeat="account in accounts">
+      <td ng-bind="account.id"></td>
+      <td ng-bind="account.org_code"></td>
+      <td ng-bind="account.platform_name"></td>
+      <td ng-bind="account.publication_name"></td>
+      <td ng-bind="account.api_key"></td>
+      <td ng-bind="account.amp_endpoint_url"></td>
+      <td><a href="" ng-href="/#/accounts/{{account.org_code}}">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
