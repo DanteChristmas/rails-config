@@ -13,7 +13,7 @@ angular.module('oasConfig', ['ngRoute', 'ngResource'])
     })
     .when('/accounts/new', {
       templateUrl: 'assets/templates/pages/accounts/create.html',
-      controller: 'AccountCtrl'
+      controller: 'CreateAccountCtrl'
     })
     .when('/accounts/:id', {
       templateUrl: 'assets/templates/pages/accounts/edit.html',

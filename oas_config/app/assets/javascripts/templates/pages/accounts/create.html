@@ -1,1 +1,69 @@
-<p>templates/pages/accounts/create.html</p>
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="org_code" type="text" ng-model="newAccount.org_code">
+        <label for="org_code">Organization Code</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="publication_name" type="text" ng-model="newAccount.publication_name">
+        <label for="publication_name">Publication Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 input-field">
+        <input id="platform_name" type="text" ng-model="newAccount.platform_name">
+        <label for="platform_name">Platform Name</label>
+      </div>
+      <div class="col s6 input-field">
+        <input id="copyright" type="text" ng-model="newAccount.copyright">
+        <label for="copyright">Copyright</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="api_key" type="text" ng-model="newAccount.api_key">
+        <label for="api_key">AMP API Key</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="amp_endpoint_url" type="text" ng-model="newAccount.amp_endpoint_url">
+        <label for="amp_endpoint_url">AMP Endpoint URL</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="google_analytics_key" type="text" ng-model="newAccount.google_analytics_key">
+        <label for="google_analytics_key">Google Analytics Key</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="google_search_key" type="text" ng-model="newAccount.google_search_key">
+        <label for="google_search_key">Google Search Key</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="dfp_path_prefix" type="text" ng-model="newAccount.dfp_path_prefix">
+        <label for="dfp_path_prefix">DFP Path Prefix</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="ooyala_ad_set_codes" type="text" ng-model="newAccount.ooyala_ad_set_codes">
+        <label for="ooyala_ad_set_codes">Ooyala AdSet Codes</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="ooyala_video_player_id" type="text" ng-model="newAccount.ooyala_video_player_id">
+        <label for="ooyala_video_player_id">Ooyala Video Player Id</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="ooyala_audio_player_id" type="text" ng-model="newAccount.ooyala_audio_player_id">
+        <label for="ooyala_audio_player_id">Ooyala Audio Player Id</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <a class="waves-effect waves-light btn right" ng-click="createAccount($event)">Save</a>
+  </div>
+</div>
