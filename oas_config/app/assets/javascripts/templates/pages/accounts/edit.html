@@ -1,1 +1,8 @@
-<p>templates/pages/accounts/edit.html</p>
+<div class="row">
+  <p ng-bind="::account.config.id"></p>
+  <p ng-bind="::account.cofig.org_code"></p>
+</div>
+<div class="row" ng-repeat="asset in account.assets">
+  <p ng-bind="asset.version"></p>
+  <p ng-bind="asset.url"></p>
+</div>

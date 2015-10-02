@@ -8,8 +8,8 @@ class AccountsController < ApiController
     begin
       @account = Account.find_by_org_code params[:id]
       @result = {
-        account: @account,
-        assets: @account.get_asset_list
+        config: @account,
+        assets: @account.get_assets
       }
       render json: @result.to_json
     rescue

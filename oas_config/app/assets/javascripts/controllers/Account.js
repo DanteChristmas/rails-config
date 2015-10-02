@@ -13,6 +13,7 @@ function ($scope, $route, AccountFactory) {
     init: function(){
       controller.getAccounts();
     },
+    
     getAccounts: function () {
       $scope.accounts = AccountFactory.query();
     }

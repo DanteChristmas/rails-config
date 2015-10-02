@@ -17,7 +17,7 @@ angular.module('oasConfig', ['ngRoute', 'ngResource'])
     })
     .when('/accounts/:id', {
       templateUrl: 'assets/templates/pages/accounts/edit.html',
-      controller: 'AccountCtrl'
+      controller: 'EditAccountCtrl'
     })
     .when('/assets', {
       templateUrl: 'assets/templates/pages/assets/index.html',

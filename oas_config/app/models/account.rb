@@ -2,7 +2,7 @@ class Account < ActiveRecord::Base
   has_many :account_assets
   has_many :asset_lists, :through => :account_assets
 
-  def get_asset_list
+  def get_assets
     if Rails.configuration.serve_full_assets
       asset_lists.map {|i| i.assets}.flatten
     else
