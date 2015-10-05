@@ -31,6 +31,18 @@ angular.module('oasConfig', ['ngRoute', 'ngResource'])
       templateUrl: 'assets/templates/pages/assets/edit.html',
       controller: 'EditAssetCtrl'
     })
+    .when('/asset-lists', {
+      templateUrl: 'assets/templates/pages/asset-lists/index.html',
+      controller: 'AssetListCtrl'
+    })
+    .when('/asset-lists/new', {
+      templateUrl: 'assets/templates/pages/asset-lists/create.html',
+      controller: 'CreateAssetListCtrl'
+    })
+    .when('/asset-lists/:id', {
+      templateUrl: 'assets/templates/pages/asset-lists/edit.html',
+      controller: 'EditAssetListCtrl'
+    })
     .otherwise({
       templateUrl: '/assets/templates/404.html'
     })
