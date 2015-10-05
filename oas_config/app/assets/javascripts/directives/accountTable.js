@@ -27,7 +27,9 @@ angular.module('oasConfig')
           },
 
           scope: {
-
+            deleteAccount: function (account) {
+              scope.$emit('delete-account', account);
+            }
           }
         };
 

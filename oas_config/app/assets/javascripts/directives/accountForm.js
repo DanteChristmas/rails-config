@@ -28,7 +28,10 @@ angular.module('oasConfig')
 
           scope: {
             saveAccount: function () {
-              scope.$emit('save-account', scope.account);
+              scope.$emit('save-account');
+            },
+            isSet: function(item){
+              return typeof item !== 'undefined' && item !== null;
             }
           }
         };

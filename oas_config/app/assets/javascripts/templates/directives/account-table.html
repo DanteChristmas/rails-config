@@ -18,7 +18,16 @@
       <td ng-bind="account.publication_name"></td>
       <td ng-bind="account.api_key"></td>
       <td ng-bind="account.amp_endpoint_url"></td>
-      <td><a href="" ng-href="/#/accounts/{{account.org_code}}">Edit</a></td>
+      <td>
+        <ul>
+          <li>
+            <a href="" ng-href="/#/accounts/{{account.id}}">Edit</a>
+          </li>
+          <li>
+            <a href="" ng-click="deleteAccount(account)">Delete</a>
+          </li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>

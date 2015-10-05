@@ -25,19 +25,18 @@ function ($scope, $route, AccountFactory, $location) {
         publication_name: null,
         amp_endpoint_url: null
       }
-      controller.setScope();
+      controller.bindEvents();
     },
-    setScope: function(){
-      for(var property in controller.scope){
-        $scope[property] = controller.scope[property];
-      }
+    bindEvents: function () {
+      $scope.$on('save-account', function (e) {
+        controller.createAccount();
+      });
     },
-    scope: {
-      createAccount: function (event) {
-        var postAccount = new AccountFactory({account: $scope.newAccount});
-        postAccount.$save();
-        $location.path('/accounts/' + postAccount.account.org_code);
-      }
+    createAccount: function () {
+      var postAccount = new AccountFactory({account: $scope.newAccount});
+      postAccount.$save(function () {
+        $location.path('/accounts/' + postAccount.id);
+      });
     }
   }
 

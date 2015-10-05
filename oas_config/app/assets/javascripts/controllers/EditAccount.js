@@ -16,12 +16,11 @@ function ($scope, $route, AccountFactory, $location) {
     },
 
     getAccount: function () {
-      $scope.stuff = AccountFactory.get($route.current.params);
-      $scope.account = $scope.stuff.config;
+      $scope.account = AccountFactory.get($route.current.params);
     },
     bindEvents: function () {
-      $scope.$on('save-account', function (e, updateAccount) {
-        $scope.account = AccountFactory.update({id: $scope.account.id}, updateAccount);
+      $scope.$on('save-account', function (e) {
+        AccountFactory.update({ id: $scope.account.id}, {account: $scope.account});
       });
     }
   };

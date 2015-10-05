@@ -2,5 +2,7 @@
 
 angular.module('oasConfig').factory('AccountFactory', ['$log', '$resource',
 function($log, $resource) {
-    return $resource('/accounts/:id', {}, {});
+    return $resource('/api/accounts/:id', {}, {
+      update: {method: 'PUT'}
+    });
 }]);

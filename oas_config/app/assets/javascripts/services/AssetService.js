@@ -2,5 +2,5 @@
 
 angular.module('oasConfig').factory('AssetFactory', ['$log', '$resource',
 function($log, $resource) {
-    return $resource('/assets/:id', {}, {});
+    return $resource('/api/assets/:id', {}, {});
 }]);

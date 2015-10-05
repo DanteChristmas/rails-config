@@ -11,11 +11,19 @@ function ($scope, $route, AccountFactory) {
 
   var controller = {
     init: function(){
+      controller.bindEvents();
       controller.getAccounts();
     },
-    
+
     getAccounts: function () {
       $scope.accounts = AccountFactory.query();
+    },
+
+    bindEvents: function () {
+      $scope.$on('delete-account', function (e, account) {
+        AccountFactory.delete({id: account.id});
+        controller.getAccounts();
+      });
     }
   };
 

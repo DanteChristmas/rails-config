@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :accounts
+  namespace :api do
+    resources :accounts, :assets,
+    :defaults => {:format => "json"}
+  end
 end
