@@ -16,7 +16,7 @@ function($scope, $route, AssetFactory, $location) {
         AssetFactory.update({id: $scope.asset.id}, {asset: $scope.asset});
       });
     }
-  }
+  };
 
   controller.init();
 }]);

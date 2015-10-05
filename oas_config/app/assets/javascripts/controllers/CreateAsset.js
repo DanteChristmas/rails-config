@@ -9,7 +9,7 @@ function ($scope, $route, AssetFactory, $location) {
         component_name: null,
         version: null,
         url: null,
-        type: null
+        asset_type: null
       };
       controller.bindEvents();
     },

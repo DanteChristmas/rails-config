@@ -1,27 +1,27 @@
 'use strict';
 
 angular.module('oasConfig')
-.directive('assetForm', ['$location', function ($location) {
+.directive('assetListForm', ['$location', function ($location) {
   return {
     restrict: 'E',
-    templateUrl: 'assets/templates/directives/asset-form.html',
+    templateUrl: 'assets/templates/directives/asset-list-form.html',
     replace: true,
     scope: {
-      asset: '='
+      assetList: '='
     },
     link: function (scope, element) {
       var link = {
         init: function () {
           link.setScope();
         },
-        setScope: function() {
+        setScope: function () {
           for(var property in link.scope) {
             scope[property] = link.scope[property];
           }
         },
         scope: {
-          saveAsset: function () {
-            scope.$emit('save-asset');
+          saveAssetList: function () {
+            scope.$emit('save-assetList');
           },
           isSet: function (item) {
             return typeof item !== 'undefined' && item !== null;

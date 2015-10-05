@@ -1,0 +1,35 @@
+<div class="asset_list_form">
+  <div class="row form_body">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="version" type="text" ng-model="assetList.version">
+          <label for="version" ng-class="{active: isSet(assetList.version)}">Version</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 input-field">
+          <input id="url" type="text" ng-model="assetList.url">
+          <label for="url" ng-class="{active: isSet(assetList.url)}">S3 Url</label>
+        </div>
+        <div class="col s6 input-field">
+          <input id="asset_type" type="text" ng-model="assetList.asset_type">
+          <label for="asset_type" ng-class="{active: isSet(assetList.asset_type)}">Asset Type</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <p ng-bind="assetList.script_created"></p>
+        </div>
+        <div class="col s6">
+          <p ng-bind="assetList.script_last_modified"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row submit_row">
+    <div class="col s12">
+      <a class="waves-effect waves-light btn right" ng-click="saveAssetList()">Save</a>
+    </div>
+  </div>
+</div>
