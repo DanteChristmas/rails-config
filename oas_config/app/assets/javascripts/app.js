@@ -23,13 +23,13 @@ angular.module('oasConfig', ['ngRoute', 'ngResource'])
       templateUrl: 'assets/templates/pages/assets/index.html',
       controller: 'AssetCtrl'
     })
-    .when('/asssets/new', {
+    .when('/assets/new', {
       templateUrl: 'assets/templates/pages/assets/create.html',
-      controller: 'AssetCtrl'
+      controller: 'CreateAssetCtrl'
     })
     .when('/assets/:id', {
       templateUrl: 'assets/templates/pages/assets/edit.html',
-      controller: 'AssetCtrl'
+      controller: 'EditAssetCtrl'
     })
     .otherwise({
       templateUrl: '/assets/templates/404.html'

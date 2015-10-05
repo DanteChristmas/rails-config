@@ -1,0 +1,39 @@
+<div class="asset_form">
+  <div class="row form_body">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="component_name" type="text" ng-model="asset.component_name">
+          <label for="component_name" ng-class="{active: isSet(asset.component_name)}">Component Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="version" type="text" ng-model="asset.version">
+          <label for="version" ng-class="{active: isSet(asset.version)}">Version</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 input-field">
+          <input id="url" type="text" ng-model="asset.url">
+          <label for="url" ng-class="{active: isSet(asset.url)}">S3 Url</label>
+        </div>
+        <div class="col s6 input-field">
+          <input id="asset_type" type="text" ng-model="asset.asset_type">
+          <label for="asset_type" ng-class="{active: isSet(asset.asset_type)}">Asset Type</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <p ng-bind="asset.script_created"></p>
+        </div>
+        <div class="col s6">
+          <p ng-bind="asset.script_last_modified"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row submit_row">
+    <div class="col s12">
+      <a class="waves-effect waves-light btn right" ng-click="saveAsset()">Save</a>
+    </div>
+  </div>
+</div>

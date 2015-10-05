@@ -1,0 +1,35 @@
+<table class="striped responsive-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Component Name</th>
+      <th>Asset Type</th>
+      <th>Version</th>
+      <th>S3 URL</th>
+      <th>Script Created</th>
+      <th>Script Last Modified</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="account_row" ng-repeat="asset in assets">
+      <td ng-bind="asset.id"></td>
+      <td ng-bind="asset.component_name"></td>
+      <td ng-bind="asset.asset_type"></td>
+      <td ng-bind="asset.version"></td>
+      <td ng-bind="asset.url"></td>
+      <td ng-bind="asset.script_created"></td>
+      <td ng-bind="asset.script_last_modified"></td>
+      <td>
+        <ul>
+          <li>
+            <a href="" ng-href="/#/assets/{{asset.id}}">Edit</a>
+          </li>
+          <li>
+            <a href="" ng-click="deleteAsset(asset)">Delete</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
