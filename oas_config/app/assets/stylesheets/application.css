@@ -12,5 +12,6 @@
  *
  *= require materialize/bin/materialize
  *= require angular_animation.css
+ *= require materialize_extensions
  *= require_self
  */

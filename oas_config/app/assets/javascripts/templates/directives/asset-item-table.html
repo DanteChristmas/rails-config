@@ -1,0 +1,26 @@
+<div class="asset_item_table">
+  <table class="striped responsive-table">
+    <thead>
+      <tr>
+        <th>Component Name</th>
+        <th>Version</th>
+        <th>Script Last Modified</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="account_row" ng-repeat="asset in assets track by asset.id" ng-hide="hideAsset(asset)">
+        <td ng-bind="asset.component_name"></td>
+        <td ng-bind="asset.version"></td>
+        <td ng-bind="asset.script_last_modified"></td>
+        <td ng-if="isAddTable"><a class="waves-effect waves-light btn right" ng-click="addAsset(asset)">Add</a></td>
+        <td ng-if="!isAddTable"><a class="waves-effect waves-light btn right" ng-click="removeAsset(asset)">Remove</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-if="!isAddTable" class="row">
+    <div class="col s12">
+      <a class="waves-effect waves-light btn right" ng-click="saveListAssets()">Save</a>
+    </div>
+  </div>
+</div>

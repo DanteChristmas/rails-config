@@ -1,1 +1,15 @@
-<asset-list-form asset-list="assetList"></asset-list-form>
+<ul class="collapsible" data-collapsible="accordian">
+  <li>
+    <div class="collapsible-header">Asset List Info</div>
+    <div class="collapsible-body">
+      <asset-list-form asset-list="assetList"></asset-list-form>
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">Assets</div>
+    <div class="collapsible-body">
+      <asset-item-table assets="assets" hidden-assets="listAssets" is-add-table="true"></asset-item-table>
+      <asset-item-table assets="listAssets" is-add-table="false"></asset-item-table>
+    </div>
+  </li>
+</ul>
