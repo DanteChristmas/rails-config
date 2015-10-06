@@ -1,6 +1,17 @@
 module Api
   class AssetListsController < Api::BaseApiController
 
+    def show
+      @list = AssetList.find params[:id]
+      @result = {
+        asset_list: @list
+      }
+      @result[:assets] = @list.assets if params[:include_assets]
+      @result[:accounts] = @list.accounts if params[:include_accounts]
+
+      render json: @result.to_json
+    end
+
     def update
       super
       if params[:asset_list][:assets]
