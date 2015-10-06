@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('oasConfig')
-.controller('EditAssetListCtrl', ['$scope', '$route', 'AssetListFactory', 'AssetFactory', 'AssetRepoService', '$location', 'ValidateUtilService',
-function ($scope, $route, AssetListFactory, AssetFactory, AssetRepoService, $location, ValidateUtilService) {
+.controller('EditAssetListCtrl', ['$scope', '$route', 'AssetListFactory', 'AssetFactory', '$location', 'ValidateUtilService',
+function ($scope, $route, AssetListFactory, AssetFactory, $location, ValidateUtilService) {
   var controller = {
     init: function () {
       controller.bindEvents();
@@ -18,14 +18,7 @@ function ($scope, $route, AssetListFactory, AssetFactory, AssetRepoService, $loc
       });
     },
     setListAssets: function () {
-      AssetRepoService.get().then(
-        function (data) {
-          $scope.assets = data;
-        },
-        function (error) {
-          $log.error(error);
-        }
-      );
+      $scope.assets = AssetFactory.query();
     },
     bindEvents: function () {
       $scope.$on('save-assetList', function (e) {
