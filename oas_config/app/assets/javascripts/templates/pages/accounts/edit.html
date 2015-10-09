@@ -8,8 +8,12 @@
   <li>
     <div class="collapsible-header">Assets Lists</div>
     <div class="collapsible-body">
-      <account-asset-table asset-lists="assetLists" hidden-assets="accountAssetLists" is-add-table="true"></account-asset-table>
-      <account-asset-table asset-lists="accountAssetLists" is-add-table="false"></account-asset-table>
+      <div class="row col s12">
+        <account-asset-table asset-lists="assetLists" hidden-lists="accountAssetLists" is-add-table="true"></account-asset-table>
+      </div>
+      <div class="row col s12">
+        <account-asset-table asset-lists="accountAssetLists" is-add-table="false"></account-asset-table>
+      </div>
     </div>
   </li>
 </ul>

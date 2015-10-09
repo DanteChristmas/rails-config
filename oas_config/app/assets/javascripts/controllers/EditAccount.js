@@ -35,7 +35,7 @@ function ($scope, $route, $log, AccountFactory, AssetListFactory, ValidateUtilSe
       });
       $scope.$on('remove-account-asset', function (e, list) {
         var index = $scope.accountAssetLists.indexOf(list)
-        $scope.listAssets.splice(index, 1);
+        $scope.accountAssetLists.splice(index, 1);
       });
       $scope.$on('update-account-assets', function (e) {
         var updateLists = $scope.accountAssetLists.map(function (a) {return a.id});

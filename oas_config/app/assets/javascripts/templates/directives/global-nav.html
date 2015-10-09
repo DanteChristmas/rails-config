@@ -1,18 +1,41 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <a href="#" data-activates="mobile_global_nav" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="/#/" >Dashboard</a></li>
-      <li><a href="/#/accounts">Accounts</a></li>
-      <li><a href="/#/asset-lists">Asset Lists</a></li>
-      <li><a href="/#/assets">Assets</a></li>
-    </ul>
-    <ul class="side-nav" id="mobile_global_nav">
-      <li><a href="/#/" >Dashboard</a></li>
-      <li><a href="/#/accounts">Accounts</a></li>
-      <li><a href="/#/asset-lists">Asset Lists</a></li>
-      <li><a href="/#/assets">Assets</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="global_nav">
+  <ul id="account-dropdown" class="dropdown-content">
+    <li><a href="/#/accounts">View Accounts</a></li>
+    <li><a href="/#/accounts/new">Create Account</a></li>
+    <li><a href="/#/accounts/reports">Reports</a></li>
+  </ul>
+  <ul id="asset-list-dropdown" class="dropdown-content">
+    <li><a href="/#/asset-lists">View Asset Lists</a></li>
+    <li><a href="/#/asset-lists/new">Create AssetList</a></li>
+    <li><a href="/#/asset-lists/reports">Reports</a></li>
+  </ul>
+  <ul id="asset-dropdown" class="dropdown-content">
+    <li><a href="/#/assets">View Assets</a></li>
+    <li><a href="/#/assets/new">Create Asset</a></li>
+    <li><a href="/#/assets/reports">Reports</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile_global_nav" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/#/" >Dashboard</a></li>
+        <li><a class="dropdown-button" href="javascript: void(0);" data-activates="account-dropdown">Accounts<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="javascript: void(0);" data-activates="asset-list-dropdown">Asset Lists<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="javascript: void(0);" data-activates="asset-dropdown">Assets<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile_global_nav">
+        <li><a href="/#/" >Dashboard</a></li>
+        <li><a href="/#/accounts">View Accounts</a></li>
+        <li><a href="/#/accounts/new">Create Account</a></li>
+        <li><a href="/#/accounts/reports">Account Reports</a></li>
+        <li><a href="/#/asset-lists">View Asset Lists</a></li>
+        <li><a href="/#/asset-lists/new">Create Asset List</a></li>
+        <li><a href="/#/asset-Lists/reports">Asset List Reports</a></li>
+        <li><a href="/#/assets">View Assets</a></li>
+        <li><a href="/#/assets/new">Create Asset</a></li>
+        <li><a href="/#/assets/reports">Asset Reports</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>

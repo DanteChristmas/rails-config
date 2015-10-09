@@ -18,13 +18,18 @@ angular.module('oasConfig')
         var link = {
           init: function(){
             link.setScope();
-            element.find('.button-collapse').sideNav();
+            link.materializeInit();
           },
 
           setScope: function(){
             for(var property in link.scope){
               scope[property] = link.scope[property];
             }
+          },
+
+          materializeInit: function () {
+            element.find('.button-collapse').sideNav();
+            element.find('.dropdown-button').dropdown();
           },
 
           scope: {
