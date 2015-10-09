@@ -39,7 +39,7 @@ function ($scope, $route, AssetListFactory, AssetFactory, $location, ValidateUti
       });
     },
     materializeInit: function () {
-      angular.element('.collapsible').collapsible({accordion: false});
+      angular.element('.collapsible').collapsible({accordion: true});
     }
   };
   controller.init();

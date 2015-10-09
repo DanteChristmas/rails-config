@@ -33,7 +33,7 @@ angular.module('oasConfig')
               scope.$emit('update-list-assets');
             },
             addAsset: function (asset) {
-               scope.$emit('add-asset-item', asset);
+              scope.$emit('add-asset-item', asset);
             },
             removeAsset: function (asset) {
               scope.$emit('remove-asset-item', asset);

@@ -15,8 +15,8 @@ module Api
     def update
       super
       if params[:asset_list][:assets]
-        @asset_list[:asset_list].asset_ids = params[:asset_list][:assets]
-        @asset_list[:asset_list].save
+        @asset_list.asset_ids = params[:asset_list][:assets]
+        @asset_list.save
       end
     end
 

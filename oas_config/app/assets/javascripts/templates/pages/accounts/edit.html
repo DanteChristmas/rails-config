@@ -1,1 +1,15 @@
-<account-form account="account"></account-form>
+<ul class="collapsible popout" data-collapsible="accordian">
+  <li>
+    <div class="collapsible-header active">Account Info</div>
+    <div class="collapsible-body">
+      <account-form account="account"></account-form>
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">Assets Lists</div>
+    <div class="collapsible-body">
+      <account-asset-table asset-lists="assetLists" hidden-assets="accountAssetLists" is-add-table="true"></account-asset-table>
+      <account-asset-table asset-lists="accountAssetLists" is-add-table="false"></account-asset-table>
+    </div>
+  </li>
+</ul>
