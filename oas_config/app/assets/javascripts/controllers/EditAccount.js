@@ -11,10 +11,16 @@ function ($scope, $route, $log, AccountFactory, AssetListFactory, ValidateUtilSe
 
   var controller = {
     init: function(){
+      controller.setDefaults();
       controller.bindEvents();
       controller.getAccount();
       controller.getAssetLists();
       controller.materializeInit();
+    },
+
+    setDefaults: function () {
+      $scope.modalAssets = [];
+      $scope.assetModalLoading = false;
     },
 
     getAccount: function () {
@@ -42,6 +48,14 @@ function ($scope, $route, $log, AccountFactory, AssetListFactory, ValidateUtilSe
         var updateAccount = {account: $scope.account};
         updateAccount.account.asset_lists = updateLists;
         AccountFactory.update({id: $scope.account.id}, updateAccount);
+      });
+      $scope.$on('request-asset-modal', function (e, list) {
+        $scope.assetModalLoading = true;
+        $scope.$broadcast('open-asset-modal');
+        AccountListFactory.get({id: list.id, include_assets: true}, function (data) {
+          $scope.modalAssets = data.assets;
+          $scope.assetModalLoading = false;
+        });
       });
     },
     materializeInit: function () {

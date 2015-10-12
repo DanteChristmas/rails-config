@@ -1,0 +1,31 @@
+<div id="assets-modal" class="modal">
+  <div class="modal-content">
+    <div class="preloader-wrapper big" ng-class="{active: isLoading}">
+      <div class="spinner-layer spinner-green-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+      </div>
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>Component Name</th>
+          <th>Version</th>
+          <th>Script Last Modified</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="account_row" ng-repeat="asset in assets">
+          <td ng-bind="asset.component_name"></td>
+          <td ng-bind="asset.version"></td>
+          <td><a href="" target="_blank" ng-href="/#/assets/{{asset.id}}">Details</a></td>
+        </tr>
+      </tbody>
+    </table>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <a href="javascript: void(0);" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>

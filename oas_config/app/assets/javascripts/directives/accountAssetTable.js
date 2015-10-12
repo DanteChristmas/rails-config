@@ -42,6 +42,10 @@ angular.module('oasConfig')
               } else {
                 return false;
               }
+            },
+            requestAssetModal: function (list) {
+              $log.info('emmiting ')
+              scope.$emit('request-asset-modal', list);
             }
           }
         }

@@ -1,19 +1,22 @@
-<ul class="collapsible popout" data-collapsible="accordian">
-  <li>
-    <div class="collapsible-header active">Account Info</div>
-    <div class="collapsible-body">
-      <account-form account="account"></account-form>
-    </div>
-  </li>
-  <li>
-    <div class="collapsible-header">Assets Lists</div>
-    <div class="collapsible-body">
-      <div class="row col s12">
-        <account-asset-table asset-lists="assetLists" hidden-lists="accountAssetLists" is-add-table="true"></account-asset-table>
+<div class="edit_account_page">
+  <ul class="collapsible popout" data-collapsible="accordian">
+    <li>
+      <div class="collapsible-header active">Account Info</div>
+      <div class="collapsible-body">
+        <account-form account="account"></account-form>
       </div>
-      <div class="row col s12">
-        <account-asset-table asset-lists="accountAssetLists" is-add-table="false"></account-asset-table>
+    </li>
+    <li>
+      <div class="collapsible-header">Assets Lists</div>
+      <div class="collapsible-body">
+        <div class="row col s12">
+          <account-asset-table asset-lists="assetLists" hidden-lists="accountAssetLists" is-add-table="true"></account-asset-table>
+        </div>
+        <div class="row col s12">
+          <account-asset-table asset-lists="accountAssetLists" is-add-table="false"></account-asset-table>
+        </div>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+  <asset-modal assets="modalAssets" is-loading="assetModalLoading"></asset-modal>
+</div>

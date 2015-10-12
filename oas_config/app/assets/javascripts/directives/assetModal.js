@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('oasConfig')
-  .directive('accountTable', ['$location', 'ValidateUtilService', function($location, ValidateUtilService) {
+  .directive('assetModal', ['$location', function($location) {
     return {
       restrict: 'E',
-      templateUrl: 'assets/templates/directives/account-table.html',
+      templateUrl: 'assets/templates/directives/asset-modal.html',
       replace: true,
       scope: {
-        accounts: '='
+        assets: '=',
+        isLoading: '='
       },
       link: function(scope, element) {
 
@@ -18,7 +19,7 @@ angular.module('oasConfig')
         var link = {
           init: function(){
             link.setScope();
-            link.setDefaults();
+            link.bindEvents();
           },
 
           setScope: function(){
@@ -27,14 +28,14 @@ angular.module('oasConfig')
             }
           },
 
-          setDefaults: function () {
-            scope.no
+          bindEvents: function () {
+            scope.$on('open-asset-modal', function (e) {
+              element.openModal();
+            });
           },
 
           scope: {
-            deleteAccount: function (account) {
-              scope.$emit('delete-account', account);
-            }
+
           }
         };
 

@@ -3,6 +3,7 @@
     <table class="striped responsive-table">
       <thead>
         <tr>
+          <th>Expand Assets</th>
           <th>Asset Type</th>
           <th>Version</th>
           <th>Script Last Modified</th>
@@ -11,6 +12,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="list in assetLists track by list.id" ng-hide="hideList(list)">
+          <td ng-click="requestAssetModal(list)"><i class="material-icons">view_list</i></td>
           <td ng-bind="list.asset_type"></td>
           <td ng-bind="list.version"></td>
           <td ng-bind="list.script_last_modified"></td>
