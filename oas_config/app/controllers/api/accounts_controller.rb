@@ -2,7 +2,12 @@ module Api
   class AccountsController < Api::BaseApiController
 
     def show
-      @account = Account.find params[:id]
+      if params[:search_by_org_code]
+        @account = Account.find_by_org_code params[:id]
+      else
+        @account = Account.find params[:id]
+      end
+
       @result = {
         account: @account
       }
