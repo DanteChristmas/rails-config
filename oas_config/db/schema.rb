@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005222740) do
+ActiveRecord::Schema.define(version: 20151014183441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "account_assets", force: :cascade do |t|
-    t.integer  "asset_list_id"
+    t.integer  "asset_id"
     t.integer  "account_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "account_asset_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "accounts", force: :cascade do |t|
@@ -38,23 +39,6 @@ ActiveRecord::Schema.define(version: 20151005222740) do
     t.string   "copyright"
     t.string   "publication_name"
     t.string   "amp_endpoint_url"
-  end
-
-  create_table "asset_items", force: :cascade do |t|
-    t.integer  "asset_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "asset_list_id"
-  end
-
-  create_table "asset_lists", force: :cascade do |t|
-    t.string   "version"
-    t.string   "url"
-    t.datetime "script_created"
-    t.datetime "script_last_modified"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.string   "asset_type"
   end
 
   create_table "assets", force: :cascade do |t|
