@@ -11,7 +11,7 @@ module Api
       @result = {
         account: @account
       }
-      @result[:assets] = @account.asset_lists if params[:include_assets]
+      @result[:assets] = @account.assets if params[:include_assets]
 
       render json: @result.to_json
     end
@@ -19,7 +19,7 @@ module Api
     def update
       super
       if params[:account][:asset_lists]
-        @account.asset_list_ids = params[:account][:asset_lists]
+        @account.asset_ids = params[:account][:asset_lists]
         @account.save
       end
     end
