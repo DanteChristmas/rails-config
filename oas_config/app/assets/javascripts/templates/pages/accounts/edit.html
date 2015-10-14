@@ -10,13 +10,12 @@
       <div class="collapsible-header">Assets Lists</div>
       <div class="collapsible-body">
         <div class="row col s12">
-          <account-asset-table asset-lists="assetLists" hidden-lists="accountAssetLists" is-add-table="true"></account-asset-table>
+          <account-asset-table assets="assets" hidden-assets="accountAssets" is-add-table="true"></account-asset-table>
         </div>
         <div class="row col s12">
-          <account-asset-table asset-lists="accountAssetLists" is-add-table="false"></account-asset-table>
+          <account-asset-table assets="accountAssets" is-add-table="false"></account-asset-table>
         </div>
       </div>
     </li>
   </ul>
-  <asset-modal assets="modalAssets" is-loading="assetModalLoading"></asset-modal>
 </div>

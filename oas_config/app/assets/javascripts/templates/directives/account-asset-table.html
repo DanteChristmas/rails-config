@@ -3,7 +3,7 @@
     <table class="striped responsive-table">
       <thead>
         <tr>
-          <th>Expand Assets</th>
+          <th>Asset Name</th>
           <th>Asset Type</th>
           <th>Version</th>
           <th>Script Last Modified</th>
@@ -11,13 +11,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="list in assetLists track by list.id" ng-hide="hideList(list)">
-          <td ng-click="requestAssetModal(list)"><i class="material-icons">view_list</i></td>
-          <td ng-bind="list.asset_type"></td>
-          <td ng-bind="list.version"></td>
-          <td ng-bind="list.script_last_modified"></td>
-          <td ng-if="isAddTable"><a class="waves-effect waves-light btn right" ng-click="addList(list)">Add</a></td>
-          <td ng-if="!isAddTable"><a class="wave-effect wave-light btn right" ng-click="removeList(list)">Remove</a></td>
+        <tr ng-repeat="asset in assets track by asset.id" ng-hide="hideAsset(asset)">
+          <td ng-bind="asset.component_name"></td>
+          <td ng-bind="asset.asset_type"></td>
+          <td ng-bind="asset.version"></td>
+          <td ng-bind="asset.script_last_modified"></td>
+          <td ng-if="isAddTable"><a class="waves-effect waves-light btn right" ng-click="addAsset(asset)">Add</a></td>
+          <td ng-if="!isAddTable"><a class="wave-effect wave-light btn right" ng-click="removeAsset(asset)">Remove</a></td>
         </tr>
       </tbody>
     </table>

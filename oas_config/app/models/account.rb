@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  has_many :assets
+  has_many :account_assets
   has_many :assets, :through => :account_assets
 
   def get_assets

@@ -8,8 +8,8 @@ angular.module('oasConfig')
       templateUrl: 'assets/templates/directives/account-asset-table.html',
       replace: true,
       scope: {
-        assetLists: '=',
-        hiddenLists: '=?',
+        assets: '=',
+        hiddenAssets: '=?',
         isAddTable: '='
       },
       link: function(scope, element) {
@@ -26,15 +26,15 @@ angular.module('oasConfig')
             saveAccountAssets: function () {
               scope.$emit('update-account-assets');
             },
-            addList: function (list) {
-              scope.$emit('add-account-asset', list);
+            addAsset: function (asset) {
+              scope.$emit('add-account-asset', asset);
             },
-            removeList: function (list) {
-              scope.$emit('remove-account-asset', list);
+            removeAsset: function (asset) {
+              scope.$emit('remove-account-asset', asset);
             },
-            hideList: function (list) {
-              if(ValidateUtilService.isSet(scope.hiddenLists)) {
-                if(scope.hiddenLists.some(l => l.id == list.id)) {
+            hideAsset: function (asset) {
+              if(ValidateUtilService.isSet(scope.hiddenAssets)) {
+                if(scope.hiddenAssets.some(a => a.id == asset.id)) {
                   return true;
                 } else {
                   return false;
@@ -42,10 +42,6 @@ angular.module('oasConfig')
               } else {
                 return false;
               }
-            },
-            requestAssetModal: function (list) {
-              $log.info('emmiting ')
-              scope.$emit('request-asset-modal', list);
             }
           }
         }
