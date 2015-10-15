@@ -31,6 +31,18 @@ angular.module('oasConfig', ['ngRoute', 'ngResource'])
       templateUrl: 'assets/templates/pages/assets/edit.html',
       controller: 'EditAssetCtrl'
     })
+    .when('/amp-configs', {
+      templateUrl: 'assets/templates/pages/amp-configs/index.html',
+      controller: 'AmpConfigCtrl'
+    })
+    .when('/amp-configs/new', {
+      templateUrl: 'assets/templates/pages/amp-configs/create.html',
+      controller: 'CreateAmpConfigCtrl'
+    })
+    .when('/amp-configs/:id', {
+      templateUrl: 'assets/templates/pages/amp-configs/edit.html',
+      controller: 'EditAmpConfigCtrl'
+    })
     .otherwise({
       templateUrl: '/assets/templates/404.html'
     })

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014184711) do
+ActiveRecord::Schema.define(version: 20151015212906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20151014184711) do
     t.string   "copyright"
     t.string   "publication_name"
     t.string   "amp_endpoint_url"
+  end
+
+  create_table "amp_configs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "org_type"
+    t.string   "org_code"
+    t.string   "api_key"
+    t.string   "endpoint_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "assets", force: :cascade do |t|

@@ -1,0 +1,41 @@
+<div class="amp_config_form">
+  <div class="row form_body">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="amp_config_name" type="text" ng-model="ampConfig.name">
+          <label for="amp_config_name" ng-class="{active: isSet(ampConfig.name)}">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 input-field">
+          <select ng-model="ampConfig.org_type">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="school">School</option>
+            <option value="conf">Conference</option>
+          </select>
+          <label>Organization Type</label>
+        </div>
+        <div class="col s6 input-field">
+          <input id="org_code" type="text" ng-model="ampConfig.org_code">
+          <label for="org_code" ng-class="{active: isSet(ampConfig.org_code)}">Organization Code</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 input-field">
+          <input id="api_key" type="text" ng-model="ampConfig.api_key">
+          <label for="api_key" ng-class="{active: isSet(ampConfig.api_key)}">API Key</label>
+        </div>
+        <div class="col s6 input-field">
+          <input id="endpoint_url" type="text" ng-model="ampConfig.endpoint_url">
+          <label for="endpoint_url" ng-class="{active: isSet(ampConfig.endpoint_url)}">Endpoint URL</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row submit_row">
+    <div class="col s12">
+      <a class="waves-effect waves-light btn right" ng-click="saveAmpConfig()">Save</a>
+    </div>
+  </div>
+</div>

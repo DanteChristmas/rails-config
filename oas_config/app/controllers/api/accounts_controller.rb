@@ -20,8 +20,12 @@ module Api
       super
       if params[:account][:assets]
         @account.asset_ids = params[:account][:assets]
-        @account.save
       end
+      if params[:account][:amp_config]
+        @account.amp_config_id = params[:account][:amp_config]
+      end
+
+      @account.save
     end
 
     def account_params

@@ -1,4 +1,5 @@
 class Account < ActiveRecord::Base
+  has_one :amp_config
   has_many :account_assets
   has_many :assets, :through => :account_assets
 
