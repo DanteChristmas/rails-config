@@ -23,7 +23,7 @@ function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, 
     },
 
     getAccount: function () {
-      AccountFactory.get({id: $route.current.params.id, include_assets: true, include_amp_config: true}, function (data) {
+      AccountFactory.get({id: $route.current.params.id, include_assets: true}, function (data) {
         $scope.account = data.account;
         $scope.accountAssets = ValidateUtilService.isSet(data.assts) ? data.assets : [];
       });

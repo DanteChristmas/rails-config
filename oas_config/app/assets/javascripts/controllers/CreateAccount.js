@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('oasConfig')
-.controller('CreateAccountCtrl', ['$scope', '$route', 'AccountFactory', '$location',
-function ($scope, $route, AccountFactory, $location) {
+.controller('CreateAccountCtrl', ['$scope', '$route', 'AccountFactory', 'AmpConfigFactory', '$location',
+function ($scope, $route, AccountFactory, AmpConfigFactory, $location) {
   var _helper = {
     isSet: function(property){
       return typeof property !== 'undefined' && property !== null;
@@ -13,7 +13,7 @@ function ($scope, $route, AccountFactory, $location) {
     init: function(){
       $scope.newAccount = {
         org_code: null,
-        api_key: null,
+        amp_config_id: 1,
         google_analytics_key: null,
         google_search_key: null,
         dfp_path_prefix: null,
@@ -22,15 +22,18 @@ function ($scope, $route, AccountFactory, $location) {
         ooyala_audio_player_id: null,
         platform_name: null,
         copyright: null,
-        publication_name: null,
-        amp_endpoint_url: null
+        publication_name: null
       }
       controller.bindEvents();
+      controller.getAmpConfigs();
     },
     bindEvents: function () {
       $scope.$on('save-account', function (e) {
         controller.createAccount();
       });
+    },
+    getAmpConfigs: function () {
+      $scope.ampConfigs = AmpConfigFactory.query();
     },
     createAccount: function () {
       var postAccount = new AccountFactory({account: $scope.newAccount});
