@@ -12,6 +12,7 @@ module Api
         account: @account
       }
       @result[:assets] = @account.assets if params[:include_assets]
+      @result[:ampConfig] = @account.amp_config if params[:include_amp_config]
 
       render json: @result.to_json
     end
