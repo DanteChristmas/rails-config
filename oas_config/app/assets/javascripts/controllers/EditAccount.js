@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('oasConfig')
-.controller('EditAccountCtrl', ['$scope', '$route', '$log', 'AccountFactory', 'AssetFactory', 'ValidateUtilService', '$location',
-function ($scope, $route, $log, AccountFactory, AssetFactory, ValidateUtilService, $location) {
+.controller('EditAccountCtrl', ['$scope', '$route', '$log', 'AccountFactory', 'AssetFactory', 'AmpConfigFactory', 'ValidateUtilService', '$location',
+function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, ValidateUtilService, $location) {
   var _helper = {
     isSet: function(property){
       return typeof property !== 'undefined' && property !== null;
@@ -14,7 +14,6 @@ function ($scope, $route, $log, AccountFactory, AssetFactory, ValidateUtilServic
       controller.setDefaults();
       controller.bindEvents();
       controller.getAccount();
-      controller.getAssetLists();
       controller.materializeInit();
     },
 
@@ -24,12 +23,15 @@ function ($scope, $route, $log, AccountFactory, AssetFactory, ValidateUtilServic
     },
 
     getAccount: function () {
-      AccountFactory.get({id: $route.current.params.id, include_assets: true}, function (data) {
+      AccountFactory.get({id: $route.current.params.id, include_assets: true, include_amp_config: true}, function (data) {
         $scope.account = data.account;
         $scope.accountAssets = ValidateUtilService.isSet(data.assts) ? data.assets : [];
       });
+
+      $scope.assets = AssetFactory.query();
+      $scope.ampConfigs = AmpConfigFactory.query();
     },
-    getAssetLists: function () {
+    getAssets: function () {
       $scope.assets = AssetFactory.query();
     },
     bindEvents: function () {

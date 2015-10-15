@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015212906) do
+ActiveRecord::Schema.define(version: 20151015220551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20151015212906) do
     t.string   "org_code"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "api_key"
     t.string   "google_analytics_key"
     t.string   "google_search_key"
     t.string   "dfp_path_prefix"
@@ -38,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151015212906) do
     t.string   "platform_name"
     t.string   "copyright"
     t.string   "publication_name"
-    t.string   "amp_endpoint_url"
+    t.integer  "amp_config_id"
   end
 
   create_table "amp_configs", force: :cascade do |t|

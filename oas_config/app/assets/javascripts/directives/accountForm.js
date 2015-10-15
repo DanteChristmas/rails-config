@@ -7,7 +7,8 @@ angular.module('oasConfig')
       templateUrl: 'assets/templates/directives/account-form.html',
       replace: true,
       scope: {
-        account: '='
+        account: '=',
+        ampConfigs: '='
       },
       link: function(scope, element) {
 
@@ -18,12 +19,17 @@ angular.module('oasConfig')
         var link = {
           init: function(){
             link.setScope();
+            // link.materializeInit();
           },
 
           setScope: function(){
             for(var property in link.scope){
               scope[property] = link.scope[property];
             }
+          },
+
+          materializeInit: function () {
+            element.find('select').material_select();
           },
 
           scope: {

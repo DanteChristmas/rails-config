@@ -22,13 +22,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
-          <input id="api_key" type="text" ng-model="account.api_key">
-          <label for="api_key" ng-class="{active: isSet(account.api_key)}">AMP API Key</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="amp_endpoint_url" type="text" ng-model="account.amp_endpoint_url">
-          <label for="amp_endpoint_url" ng-class="{active: isSet(account.amp_endpoint_url)}">AMP Endpoint URL</label>
+        <div class="col s12">
+          <label>Amp Environment</label>
+          <select class="browser-default" ng-model="account.amp_config_id" ng-options="config.id as config.name for config in ampConfigs">
+          </select>
         </div>
       </div>
       <div class="row">
