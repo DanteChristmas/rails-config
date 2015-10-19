@@ -30,6 +30,56 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
+          <input id="facebook_app_id" type="text" ng-model="account.facebook_app_id">
+          <label for="facebook_app_id" ng-class="{active: isSet(account.facebook_app_id)}">Facebody App Id</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="facebook_url" type="text" ng-model="account.facebook_url">
+          <label for="facebook_url" ng-class="{active: isSet(account.facebook_url)}">Facebook URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="twitter_url" type="text" ng-model="account.twitter_url">
+          <label for="twitter_url" ng-class="{active: isSet(account.twitter_url)}">Twitter URL</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="instagram_url" type="text" ng-model="account.instagram_url">
+          <label for="instagram_url" ng-class="{active: isSet(account.instagram_url)}">Instagram URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="youtube_url" type="text" ng-model="account.youtube_url">
+          <label for="youtube_url" ng-class="{active: isSet(account.youtube_url)}">YouTube URL</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="pinterest_url" type="text" ng-model="account.pinterest_url">
+          <label for="pinterest_url" ng-class="{active: isSet(account.pinterest_url)}">Pinterest URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="twitter_handle" type="text" ng-model="account.institution_twitter_handle">
+          <label for="twitter_handle" ng-class="{active: isSet(account.institution_twitter_handle)}">Twitter Handle</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="twitter_string" type="text" ng-model="account.institution_twitter_string">
+          <label for="twitter_string" ng-class="{active: isSet(account.institution_twitter_string)}">Twitter String</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="default_tickets_link" type="text" ng-model="account.default_tickets_link">
+          <label for="default_tickets_link">Default Tickets Link</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="media_byline" type="text" ng-model="account.media_byline">
+          <label for="media_byline">Media Byline</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
           <input id="google_analytics_key" type="text" ng-model="account.google_analytics_key">
           <label for="google_analytics_key" ng-class="{active: isSet(account.google_analytics_key)}">Google Analytics Key</label>
         </div>

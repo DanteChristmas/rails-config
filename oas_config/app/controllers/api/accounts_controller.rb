@@ -27,7 +27,7 @@ module Api
     end
 
     def account_params
-      params.require(:account).permit(:org_code, :google_analytics_key, :google_search_key, :dfp_path_prefix, :ooyala_ad_set_codes, :ooyala_video_player_id, :ooyala_audio_player_id, :platform_name, :copyright, :publication_name, :amp_config_id)
+      params.require(:account).permit(:org_code, :google_analytics_key, :google_search_key, :dfp_path_prefix, :ooyala_ad_set_codes, :ooyala_video_player_id, :ooyala_audio_player_id, :platform_name, :copyright, :publication_name, :amp_config_id, :facebook_app_id, :institution_twitter_handle, :institution_twitter_string, :default_tickets_link, :media_byline, :facebook_url, :twitter_url, :instagram_url, :youtube_url, :pinterest_url)
     end
   end
 end
