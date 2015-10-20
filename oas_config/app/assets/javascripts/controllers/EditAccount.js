@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('oasConfig')
-.controller('EditAccountCtrl', ['$scope', '$route', '$log', 'AccountFactory', 'AssetFactory', 'AmpConfigFactory', 'ValidateUtilService', '$location',
-function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, ValidateUtilService, $location) {
+.controller('EditAccountCtrl', ['$scope', '$route', '$log', 'AccountFactory', 'AssetFactory', 'AmpConfigFactory', 'FeatureToggleFactory', 'ValidateUtilService', '$location',
+function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, FeatureToggleFactory, ValidateUtilService, $location) {
   var _helper = {
     isSet: function(property){
       return typeof property !== 'undefined' && property !== null;
@@ -23,9 +23,10 @@ function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, 
     },
 
     getAccount: function () {
-      AccountFactory.get({id: $route.current.params.id, include_assets: true}, function (data) {
+      AccountFactory.get({id: $route.current.params.id, include_assets: true, include_feature_toggles: true}, function (data) {
         $scope.account = data.account;
         $scope.accountAssets = ValidateUtilService.isSet(data.assts) ? data.assets : [];
+        $scope.featureToggles = ValidateUtilService.isSet(data.featureToggles) ? data.featureToggles : {}
       });
 
       $scope.assets = AssetFactory.query();
@@ -50,6 +51,10 @@ function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, 
         var updateAccount = {account: $scope.account};
         updateAccount.account.assets = updateAssets;
         AccountFactory.update({id: $scope.account.id}, updateAccount);
+      });
+      $scope.$on('update-account-toggles', function (e) {
+        var updateToggles = $scope.featureToggles;
+        FeatureToggleFactory.update({id: updateToggles.id}, updateToggles);
       });
     },
     materializeInit: function () {

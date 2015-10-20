@@ -71,11 +71,11 @@
       <div class="row">
         <div class="input-field col s6">
           <input id="default_tickets_link" type="text" ng-model="account.default_tickets_link">
-          <label for="default_tickets_link">Default Tickets Link</label>
+          <label for="default_tickets_link" ng-class="{active: isSet(account.default_tickets_link)}">Default Tickets Link</label>
         </div>
         <div class="input-field col s6">
           <input id="media_byline" type="text" ng-model="account.media_byline">
-          <label for="media_byline">Media Byline</label>
+          <label for="media_byline" ng-class="{active: isSet(account.media_byline)}">Media Byline</label>
         </div>
       </div>
       <div class="row">

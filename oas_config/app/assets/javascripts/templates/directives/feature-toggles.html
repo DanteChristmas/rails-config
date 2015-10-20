@@ -1,0 +1,52 @@
+<div class="feature_toggles">
+  <div class="row col s12">
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>Robots</th>
+          <th>Sitemap</th>
+          <th>Paywall</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="toggle_row">
+          <td>
+            <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" ng-model="toggles.robots">
+                <span class="lever"></span>
+                On
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" ng-model="toggles.sitemap">
+                <span class="lever"></span>
+                On
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" ng-model="toggles.paywall">
+                <span class="lever"></span>
+                On
+              </label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row submit_row">
+    <div class="col s12">
+      <a class="waves-effect waves-light btn right" ng-click="saveToggles()">Save</a>
+    </div>
+  </div>
+</div>

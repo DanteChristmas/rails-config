@@ -13,8 +13,19 @@ module Api
       }
       @result[:assets] = @account.assets if params[:include_assets]
       @result[:ampConfig] = @account.amp_config if params[:include_amp_config]
+      if params[:include_feature_toggles]
+        @result[:featureToggles] = @account.feature_toggle
+        @result[:featureToggles] = @account.create_feature_toggle if !@result[:featureToggles].present?
+      end
 
       render json: @result.to_json
+    end
+
+    def create
+      super
+      if @account.id.present?
+        @account.create_feature_toggle
+      end
     end
 
     def update
