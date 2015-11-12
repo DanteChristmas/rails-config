@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020195647) do
+ActiveRecord::Schema.define(version: 20151110164603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20151020195647) do
     t.string   "instagram_url"
     t.string   "youtube_url"
     t.string   "pinterest_url"
+    t.string   "google_plus_url"
+    t.string   "DN_wall_tag"
   end
 
   create_table "amp_configs", force: :cascade do |t|
