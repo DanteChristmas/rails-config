@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
 
   def set_crsf_token_for_ng
-    cookies['XSRF-TOKEN'] = form_authenticity_param if protect_against_forgery?
+    cookies['XSRF-TOKEN'] = form_authenticity_param
   end
 
   def not_found

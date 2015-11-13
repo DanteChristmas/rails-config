@@ -35,6 +35,7 @@ module Api
       end
 
       @account.save
+      @account.touch
     end
 
     def account_params
