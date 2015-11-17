@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('oasConfig')
-.controller('EditAccountCtrl', ['$scope', '$route', '$log', 'AccountFactory', 'AssetFactory', 'AmpConfigFactory', 'FeatureToggleFactory', 'ValidateUtilService', '$location',
-function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, FeatureToggleFactory, ValidateUtilService, $location) {
+.controller('EditAccountCtrl', ['$scope', '$route', '$log', 'AccountFactory', 'AssetFactory', 'AmpConfigFactory', 'FeatureToggleFactory', 'ValidateUtilService', 'HammerService', '$location',
+function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, FeatureToggleFactory, ValidateUtilService, HammerService, $location) {
   var _helper = {
     isSet: function(property){
       return typeof property !== 'undefined' && property !== null;
@@ -55,6 +55,10 @@ function ($scope, $route, $log, AccountFactory, AssetFactory, AmpConfigFactory, 
       $scope.$on('update-account-toggles', function (e) {
         var updateToggles = $scope.featureToggles;
         FeatureToggleFactory.update({id: updateToggles.id}, updateToggles);
+      });
+      $scope.$on('publish-item', function (e) {
+        $log.info('publish-catch');
+        HammerService.get({model: 'Account', id: $scope.account.id});
       });
     },
     materializeInit: function () {

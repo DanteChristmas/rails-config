@@ -81,4 +81,6 @@ Rails.application.configure do
 
   #switch to serve full unminified/combined assets
   config.serve_full_assets = true
+
+  config.redis_url = "redis://slabs-oas-redis-int.qubqhy.0001.use1.cache.amazonaws.com:6379"
 end

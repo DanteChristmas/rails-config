@@ -22,5 +22,6 @@ module OasConfig
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    # config.cache_store = :redis_store, "redis://#{Rails.configuration.cache_host}/0/cache:ci_#{Rails.env}"
   end
 end

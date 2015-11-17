@@ -28,4 +28,6 @@ Rails.application.configure do
 
   config.serve_full_assets = true
 
+  config.redis_url = "redis://localhost:6379/0"
+
 end

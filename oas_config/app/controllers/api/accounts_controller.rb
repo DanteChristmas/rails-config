@@ -30,12 +30,12 @@ module Api
 
     def update
       super
+
+      #TODO: fix this dirty shit
       if params[:account][:assets]
         @account.asset_ids = params[:account][:assets]
+        @account.save!
       end
-
-      @account.save
-      @account.touch
     end
 
     def account_params
