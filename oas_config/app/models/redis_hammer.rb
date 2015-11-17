@@ -4,19 +4,27 @@ class RedisHammer
     @connection = Redis.new url: Rails.configuration.redis_url
   end
 
-  def self.smash(options={})
+  def smash(options={})
     if options[:account].present? && options[:model].present?
       if options[:id]
-
+        @namespace = Redis::Namespace.new options[:account].to_sym, redis: @connection
+        keys = @namespace.keys "*#{options[:model]}:find:#{options[:id]}*"
+        keys.each do |k|
+          @namespace.send('del', k)
+        end
       else
-
+        @namespace = Redis::Namespace.new options[:account].to_sym, redis: @connection
+        keys = @namespace.keys "*#{options[:model]}:all*"
+        keys.each do |k|
+          @namespace.send('del', k)
+        end
       end
     else
       raise(ArgumentError, "You need both an account and model to smash caches")
     end
   end
 
-  def self.smash_all(organization)
+  def smash_all(organization)
     if organization.present?
       @namespace = Redis::Namespace.new organization.to_sym, redis: @connection
       @namespace.keys.each do |k|
@@ -26,9 +34,5 @@ class RedisHammer
     else
       raise(ArgumentError, "You need to specify an organization code to smash the cache.")
     end
-  end
-
-  def self.instance
-    @instance ||= RedisHammer.new
   end
 end

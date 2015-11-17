@@ -89,9 +89,11 @@ module Api
       if params[:id].present?
         @account = Account.find params[:id]
         if @account.full_cache_bust
-          RedisHammer.smash_all @account.org_code
+          @account.full_cache_bust = false
+          @account.save!
+          RedisHammer.new.smash_all @account.org_code
         else
-          RedisHammer.smash({account: @account.org_code, model: "Account"})
+          RedisHammer.new.smash({account: @account.org_code, model: "Account", id: @account.org_code})
         end
       else
         raise(ArgumentError, "you must provide and org_code to destroy an account")
