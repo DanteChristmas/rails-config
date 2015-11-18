@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_client_caching
   after_filter :set_crsf_token_for_ng
+  before_action :authenticate_user!
 
   def initialize
     super

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('oasConfig')
-  .directive('accountTable', ['$location', 'ValidateUtilService', function($location, ValidateUtilService) {
+  .directive('accountTable', ['$location', 'ValidateUtilService', 'DateUtilService', function($location, ValidateUtilService, DateUtilService) {
     return {
       restrict: 'E',
       templateUrl: 'assets/templates/directives/account-table.html',
@@ -34,6 +34,9 @@ angular.module('oasConfig')
           scope: {
             deleteAccount: function (account) {
               scope.$emit('delete-account', account);
+            },
+            getDate: function (date) {
+              return DateUtilService.serverDateToFullDate(date);
             }
           }
         };

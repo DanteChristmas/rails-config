@@ -1,21 +1,19 @@
 <table class="striped responsive-table">
   <thead>
     <tr>
+      <th>Name</th>
       <th>Organization Code</th>
-      <th>Platform Name</th>
-      <th>Publication Name</th>
-      <th>ApiKey</th>
-      <th>AMP Endpoint</th>
+      <th>Created</th>
+      <th>Updated</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr class="account_row" ng-repeat="account in accounts">
-      <td ng-bind="account.org_code"></td>
-      <td ng-bind="account.platform_name"></td>
       <td ng-bind="account.publication_name"></td>
-      <td ng-bind="account.api_key"></td>
-      <td ng-bind="account.amp_endpoint_url"></td>
+      <td ng-bind="account.org_code"></td>
+      <td ng-bind="getDate(account.created_at)"></td>
+      <td ng-bind="getDate(account.updated_at)"></td>
       <td>
         <ul>
           <li>
